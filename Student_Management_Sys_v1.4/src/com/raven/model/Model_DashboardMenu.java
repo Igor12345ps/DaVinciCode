@@ -1,0 +1,62 @@
+package com.raven.model;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+
+public class Model_DashboardMenu {
+    
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+   
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public MenuType getType() {
+        return type;
+    }
+
+    public void setType(MenuType type) {
+        this.type = type;
+    }
+
+    public Model_DashboardMenu(Integer id, String icon, String name, MenuType type) {
+        this.id = id;
+        this.icon = icon;
+        this.name = name;
+        this.type = type;
+    }
+
+    public Model_DashboardMenu() {
+    }
+
+    private Integer id;
+    private String icon;
+    private String name;
+    private MenuType type;
+
+    public Icon toIcon() {
+        return new ImageIcon(getClass().getResource("/com/raven/icon/" + icon + ".png"));
+    }
+
+    public static enum MenuType {
+        TITLE, MENU, EMPTY
+    }
+}
